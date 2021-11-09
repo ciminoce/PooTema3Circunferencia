@@ -78,5 +78,25 @@ namespace PooTema3Circunferencia.Datos
             File.Delete(_archivo);
             File.Move(_archivoBak,_archivo);
         }
+
+        public void Editar(Circunferencia circOriginal, Circunferencia circModificada)
+        {
+            StreamReader lector = new StreamReader(_archivo);
+            StreamWriter escritor = new StreamWriter(_archivoBak);
+            while (!lector.EndOfStream)
+            {
+                var linea = lector.ReadLine();
+                Circunferencia circEnArchivo = ConstruirCircunferencia(linea);
+                if (circEnArchivo.Equals(circOriginal))
+                {
+                    linea = ConstruirLinea(circModificada);
+                }
+                escritor.WriteLine(linea);
+            }
+            lector.Close();
+            escritor.Close();
+            File.Delete(_archivo);
+            File.Move(_archivoBak,_archivo);
+        }
     }
 }

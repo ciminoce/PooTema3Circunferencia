@@ -46,14 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmCircunferenciaAE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmCircunferenciaAE.Designer.cs">
+      <DependentUpon>FrmCircunferenciaAE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCircunferenciaAE.resx">
+      <DependentUpon>FrmCircunferenciaAE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +88,61 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_file_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alphabetical_sorting_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_pane_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conversion_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\create_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_file_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\numeric_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restart_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reversed_numerical_sorting_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistics_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up_down_arrow_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\numeric_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reversed_numerical_sorting_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PooTema3Circunferencia.Datos\PooTema3Circunferencia.Datos.csproj">
+      <Project>{7124948f-ebaf-4f2f-9d57-5a2ef8c4b7fc}</Project>
+      <Name>PooTema3Circunferencia.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PooTema3Circurnferencia.Entidades\PooTema3Circurnferencia.Entidades.csproj">
+      <Project>{a0f4c9d6-224a-4119-9052-fcf9ff7361d8}</Project>
+      <Name>PooTema3Circurnferencia.Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

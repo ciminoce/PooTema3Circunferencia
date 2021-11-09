@@ -40,9 +40,12 @@ namespace PooTema3Circunferencia.Datos
             listaCircunferencias.Add(circunferencia);
         }
 
-        public void Editar()
+        public void Editar(Circunferencia circOriginal, Circunferencia circModificada)
         {
-
+            manejador.Editar(circOriginal, circModificada);
+            int index = listaCircunferencias.IndexOf(circOriginal);//obtengo el nro. de elemento de la circ orig
+            listaCircunferencias.RemoveAt(index);//borro el elemento con el index obtenido
+            listaCircunferencias.Insert(index,circModificada);//pongo la circ modificada en el lugar que estaba antes la orig
         }
 
         public void Borrar(Circunferencia circunferencia)
@@ -59,6 +62,26 @@ namespace PooTema3Circunferencia.Datos
         public int GetCantidad()
         {
             return listaCircunferencias.Count;
+        }
+
+        public List<Circunferencia> FiltrarPorBorde(Color color)
+        {
+            return listaCircunferencias.Where(c => c.Borde == color).ToList();
+        }
+
+        public int GetCantidad(Color color)
+        {
+            return listaCircunferencias.Count(c => c.Borde == color);
+        }
+
+        public List<Circunferencia> OrdenarAscPorRadio()
+        {
+            return listaCircunferencias.OrderBy(c => c.Radio).ToList();
+        }
+
+        public List<Circunferencia> OrdenarDescPorRadio()
+        {
+            return listaCircunferencias.OrderByDescending(c => c.Radio).ToList();
         }
     }
 }

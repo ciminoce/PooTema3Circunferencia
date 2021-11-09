@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PooTema3Circurnferencia.Entidades
 {
-    public class Circunferencia
+    public class Circunferencia:ICloneable
     {
         public int Radio { get; set; }
         public Color Borde { get; set; }
@@ -43,6 +43,11 @@ namespace PooTema3Circurnferencia.Entidades
         public override int GetHashCode()
         {
             return Radio.GetHashCode() + Borde.GetHashCode() + Relleno.GetHashCode();
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
 
         public override string ToString()
